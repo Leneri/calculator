@@ -33,7 +33,10 @@ let firstNumber = 0;
 let secondNumber = 0;
 let operator = '';
 
+
 const main = document.querySelector('.main');
+
+// add screen
 const screenContent = document.createElement('div');
 screenContent.classList.add('screen');
 screenContent.textContent = '12345678';
@@ -67,6 +70,8 @@ function screenFillUp(e) {
     firstNumber = parseInt(e.target.textContent);
     // secondNumber 
     screenContent.textContent = e.target.textContent;
-    console.log(firstNumber);
+    if (e.target.textContent == '=') {
+        screenContent.textContent = operate(firstNumber, operator, secondNumber);
+    }
 
 }
